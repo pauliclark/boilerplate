@@ -1,0 +1,22 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate node web server",
+  "main": "index.js",
+  "repository": "https://github.com/pauliclark/boilerplate.git",
+  "author": "pauliclark <paul@piclark.uk>",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "yarn nodemon sample.js DEV"
+  },
+  "dependencies": {
+    "eez": "file:../eez"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
