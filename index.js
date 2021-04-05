@@ -1,10 +1,11 @@
-import eez, { routing, response, errors } from 'eez'
+import eez, { getApp, getServer, routing, response, errors, identifiers } from 'eez'
 import environments from './constants/environments.js'
 const { success } = response
 
 const init = async ({
-  port=3080,
+  port=identifiers.autoPort,
   env= environments.DEV,
+  logger,
   afterListen = () => {}
 } = {}) => {
 
@@ -13,15 +14,10 @@ const init = async ({
 
   // Start eez
   await eez({
-    port: 3080,
+    port,
+    logger,
     afterListen
   })
-  // routing.get('/', (req, res) => {
-  //   success(res, 'root path')
-  // })
-  // routing.get('/test', (req, res) => {
-  //   success(res, 'test path')
-  // })
 }
-export {routing, response, errors, environments}
+export {routing, response, errors, environments, identifiers, getApp, getServer}
 export default init
